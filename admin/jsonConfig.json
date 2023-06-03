@@ -1,0 +1,42 @@
+{
+	"i18n": true,
+	"type": "panel",
+	"items": {
+		"option1": {
+			"type": "checkbox",
+			"label": "option1",
+			"newLine": true
+		},
+		"grp1_start": {
+			"type": "text",
+			"label": "17:00:00",
+			"newLine": true
+		},
+		"grp1_ende": {
+			"type": "text",
+			"label": "23:00:00",
+			"newLine": false
+		},		
+		"grp1_an_von": {
+			"type": "text",
+			"label": "5",
+			"newLine": false
+		},		
+		"grp1_an_bis": {
+			"type": "text",
+			"label": "10",
+			"newLine": false
+		},
+		"grp1_delay": {
+			"type": "text",
+			"label": "5",
+			"newLine": false
+		},
+		"grp1_cron": {
+			"type": "text",
+			"label": "10",
+			"newLine": false
+		}
+	
+	}
+}
