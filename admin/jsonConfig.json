@@ -1,42 +1,318 @@
 {
-	"i18n": true,
-	"type": "panel",
-	"items": {
-		"option1": {
-			"type": "checkbox",
-			"label": "option1",
-			"newLine": true
-		},
-		"grp1_start": {
-			"type": "text",
-			"label": "17:00:00",
-			"newLine": true
-		},
-		"grp1_ende": {
-			"type": "text",
-			"label": "23:00:00",
-			"newLine": false
-		},		
-		"grp1_an_von": {
-			"type": "text",
-			"label": "5",
-			"newLine": false
-		},		
-		"grp1_an_bis": {
-			"type": "text",
-			"label": "10",
-			"newLine": false
-		},
-		"grp1_delay": {
-			"type": "text",
-			"label": "5",
-			"newLine": false
-		},
-		"grp1_cron": {
-			"type": "text",
-			"label": "10",
-			"newLine": false
-		}
-	
-	}
+    "type": "tabs",
+    "items": {
+	"tab1":{
+		"type": "panel",
+		"label":"Zeitkonfiguration",
+		"items": {
+			"grp1_head":{
+				"type":"staticText",
+				"label":"Einstellung Gruppe 1"
+			},
+			"grp1_start": {
+				"type": "text",
+				"label": "Beginn",
+				"newLine": true,
+				"text":"17:00:00"
+			},
+			"grp1_ende": {
+				"type": "text",
+				"label": "Ende",
+				"newLine": false
+			},      
+			"grp1_an_von": {
+				"type": "number",
+				"min": 1,
+				"max": 180,
+				"label": "Anschaltzeit min (1)",
+				"sm": 2 
+
+			},      
+			"grp1_an_bis": {
+				"type": "number",
+				"min": 1,
+				"max": 180,
+				"label": "Anschaltzeit max (180)",
+				"sm": 2
+			},
+			"grp1_delay": {
+				"type": "number",
+				"min": 1,
+				"max": 30,
+				"label": "Verzögerung",
+				"sm": 2, 
+				"hidden": "data.myType === 1", 
+				"disabled": "data.myType === 2" 
+			},
+			"grp1_cron": {
+				"type": "number",
+				"min": 1,
+				"max": 180,
+				"label": "Prüfung ein/aus",
+				"sm": 2, 
+				"hidden": "data.myType === 1", 
+				"disabled": "data.myType === 2" 
+			},
+			"div1":{
+				"type":"divider",
+				"height":1	
+			},
+			
+			"grp2_head":{
+				"type":"staticText",
+				"label":"Einstellung Gruppe 2"
+			},
+			"grp2_start": {
+				"type": "text",
+				"label": "Beginn",
+				"newLine": true
+			},
+			"grp2_ende": {
+				"type": "text",
+				"label": "Ende",
+				"newLine": false
+			},      
+			"grp2_an_von": {
+				"type": "number",
+				"min": 1,
+				"max": 180,
+				"label": "Anschaltzeit min (1)",
+				"sm": 2
+			},      
+			"grp2_an_bis": {
+				"type": "number",
+				"min": 1,
+				"max": 180,
+				"label": "Anschaltzeit max (180)",
+				"sm": 2
+			},
+			"grp2_delay": {
+				"type": "number",
+				"min": 1,
+				"max": 180,
+				"label": "Verzögerung",
+				"sm": 2
+			},
+			"grp2_cron": {
+				"type": "number",
+				"min": 1,
+				"max": 180,
+				"label": "Prüfung ein/aus",
+				"sm": 2
+			},
+			"div2":{
+				"type":"divider",
+				"height":1	
+			},
+			"grp3_head":{
+				"type":"staticText",
+				"label":"Einstellung Gruppe 3",
+				"newLine": true
+			},
+			"grp3_start": {
+				"type": "text",
+				"label": "Beginn",
+				"newLine": true
+			},
+			"grp3_ende": {
+				"type": "text",
+				"label": "Ende",
+				"newLine": false
+			},      
+			"grp3_an_von": {
+				"type": "number",
+				"min": 1,
+				"max": 180,
+				"label": "Anschaltzeit min (1)",
+				"sm": 2
+			},      
+			"grp3_an_bis": {
+				"type": "number",
+				"min": 1,
+				"max": 180,
+				"label": "Anschaltzeit max (180)",
+				"sm": 2
+			},
+			"grp3_delay": {
+				"type": "number",
+				"min": 1,
+				"max": 180,
+				"label": "Verzögerung",
+				"sm": 2
+			},
+			"grp3_cron": {
+				"type": "number",
+				"min": 1,
+				"max": 180,
+				"label": "Prüfung ein/aus",
+				"sm": 2
+			},	
+			"div3":{
+				"type":"divider",
+				"height":1	
+			},
+			"grp4_head":{
+				"type":"staticText",
+				"label":"Einstellung Gruppe 4",
+				"newLine": true
+
+			},
+			"grp4_start": {
+				"type": "text",
+				"label": "Beginn",
+				"newLine": true
+			},
+			"grp4_ende": {
+				"type": "text",
+				"label": "Ende",
+				"newLine": false
+			},      
+			"grp4_an_von": {
+				"type": "number",
+				"min": 1,
+				"max": 180,
+				"label": "Anschaltzeit min (1)",
+				"sm": 2, 
+				"hidden": "data.myType === 1", 
+				"disabled": "data.myType === 2" 
+			},      
+			"grp4_an_bis": {
+				"type": "number",
+				"min": 1,
+				"max": 180,
+				"label": "Anschaltzeit max (180)",
+				"sm": 2
+			},
+			"grp4_delay": {
+				"type": "number",
+				"min": 1,
+				"max": 180,
+				"label": "Verzögerung",
+				"sm": 2
+			},
+			"grp4_cron": {
+				"type": "number",
+				"min": 1,
+				"max": 180,
+				"label": "Prüfung ein/aus",
+				"sm": 2
+			},
+			"div4":{
+				"type":"divider",
+				"height":1	
+			},
+			"grp5_head":{
+				"type":"staticText",
+				"label":"Einstellung Gruppe 5",
+				"newLine": true
+
+			},
+			"grp5_start": {
+				"type": "text",
+				"label": "Beginn",
+				"newLine": true
+			},
+			"grp5_ende": {
+				"type": "text",
+				"label": "Ende",
+				"newLine": false
+			},      
+			"grp5_an_von": {
+				"type": "number",
+				"min": 1,
+				"max": 180,
+				"label": "Anschaltzeit min (1)",
+				"sm": 2
+			},      
+			"grp5_an_bis": {
+				"type": "number",
+				"min": 1,
+				"max": 180,
+				"label": "Anschaltzeit max (180)",
+				"sm": 2
+			},
+			"grp5_delay": {
+				"type": "number",
+				"min": 1,
+				"max": 180,
+				"label": "Verzögerung",
+				"sm": 2
+			},
+			"grp5_cron": {
+				"type": "number",
+				"min": 1,
+				"max": 180,
+				"label": "Prüfung ein/aus",
+				"sm": 2
+			}
+			
+			
+		
+		}		
+	},
+	"grp1": {
+            "type": "panel",
+            "label": "Einstellung Gruppe 1",
+            "icon": "base64 svg", 
+            "items": {
+				"grp1_obj1":{
+					"type":"objectId",
+					"label":"Gerät 1"
+				},
+				"div1":{
+					"type":"divider",
+					"height":1	
+				},
+				"grp1_obj2":{
+					"type":"objectId",
+					"label":"Gerät 2"
+				},
+				"div2":{
+					"type":"divider",
+					"height":1	
+				},
+				"grp1_obj3":{
+					"type":"objectId",
+					"label":"Gerät 3"
+				},
+				"div3":{
+					"type":"divider",
+					"height":1	
+				},
+				"grp1_obj4":{
+					"type":"objectId",
+					"label":"Gerät 2"
+				},
+				"div4":{
+					"type":"divider",
+					"height":1	
+				},
+				"grp1_obj5":{
+					"type":"objectId",
+					"label":"Gerät 3"
+				},
+				"div5":{
+					"type":"divider",
+					"height":1	
+				}
+
+				
+            }
+        },
+
+    "grp2": {
+            "label": "Einstellung Gruppe 2",
+			"type": "panel",
+			"items":{
+			
+				"geraet1":{
+					"type":"objectId",
+					"sm": 4 
+				}
+
+			}
+			}
+
+        
+    }  
 }
