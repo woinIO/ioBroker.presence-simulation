@@ -96,9 +96,10 @@ Please refer to the [`dev-server` documentation](https://github.com/ioBroker/dev
 	### **WORK IN PROGRESS**
 -->
 
+
 ### **WORK IN PROGRESS**
 * (woinIO) initial release
-
+* (woinIO) Added Amin 5 cofiguration
 
 ## License
 MIT License

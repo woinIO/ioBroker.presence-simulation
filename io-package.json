@@ -80,6 +80,8 @@
 		]
 	},
 	"native": {
+		"grp1_start":"17:00:00" ,
+		"grp1_ende":"01:00:00",
 		"option1": true,
 		"option2": "42"
 	},
