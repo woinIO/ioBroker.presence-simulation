@@ -12,8 +12,7 @@
 			"grp1_start": {
 				"type": "text",
 				"label": "Beginn",
-				"newLine": true,
-				"pattern":"##:##:##"
+				"newLine": true
 			},
 			"grp1_ende": {
 				"type": "text",
