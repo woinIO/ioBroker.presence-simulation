@@ -44,7 +44,8 @@ class PresenceSimulation extends utils.Adapter {
 		this.log.info("test :" + this.config.option1);
 		this.log.error("Die Gruppe 1 beginnt um" + this.config.grp1_start);
 		this.log.error("Die Gruppe 1 geht bis" + this.config.grp1_ende);
-
+		this.log.info("Es wurden so viele Geräte 1 ausgewählt: " + this.config.options_grp1_anzahl);
+		this.log.info("Es wurden so viele Geräte 2 ausgewählt: " + this.config.options_grp2_anzahl);
 		/*
 		For every state in the system there has to be also an object of type state
 		Here a simple template for a boolean variable named "testVariable"

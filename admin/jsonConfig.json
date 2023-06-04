@@ -12,18 +12,23 @@
 				"grp1_start": {
 					"type": "text",
 					"label": "Beginn",
-					"newLine": true
+					"help":"Einstellungen der Aktivzeiten je Gruppe 'ab' Uhrzeit",
+					"newLine": true,
+					"sm":2
 				},
 				"grp1_ende": {
 					"type": "text",
 					"label": "Ende",
-					"newLine": false
+					"help":"Einstellungen der Aktivzeiten je Gruppe 'bis' Uhrzeit",
+					"newLine": false,
+					"sm":2
 				},      
 				"grp1_an_von": {
 					"type": "number",
 					"min": 1,
 					"max": 180,
 					"label": "Anschaltzeit min (1)",
+					"help":"Einstellungen der zufaelligen Einschaltdauer je Gruppe von",
 					"sm": 2 
 
 				},      
@@ -32,6 +37,7 @@
 					"min": 1,
 					"max": 180,
 					"label": "Anschaltzeit max (180)",
+					"help":"Einstellungen der zufaelligen Einschaltdauer je Gruppe bis",
 					"sm": 2
 				},
 				"grp1_delay": {
@@ -39,6 +45,7 @@
 					"min": 1,
 					"max": 30,
 					"label": "Verzögerung",
+					"help":"Einstellung je Gruppe für die  maximale  Startverzögerung in Minuten-bei 0 = keine Startverzögerung - bei z.B. 10 = Startverzögerung zwischen 0 und 10 in Minuten",
 					"sm": 2, 
 					"hidden": "data.myType === 1", 
 					"disabled": "data.myType === 2" 
@@ -47,7 +54,8 @@
 					"type": "number",
 					"min": 1,
 					"max": 180,
-					"label": "Prüfung ein-aus",
+					"label": "Einstellung Check-schedule",
+					"help":"z.B. alle 30  Minuten je Gruppe - Damit wird je Lauf nach Zufaelligkeit je ein Geraet der IDGruppe eingeschaltet",
 					"sm": 2, 
 					"hidden": "data.myType === 1", 
 					"disabled": "data.myType === 2" 
@@ -96,7 +104,7 @@
 					"type": "number",
 					"min": 1,
 					"max": 180,
-					"label": "Prüfung ein-aus",
+					"label": "Einstellung Check-schedule",
 					"sm": 2
 				},
 				"div2":{
@@ -143,7 +151,7 @@
 					"type": "number",
 					"min": 1,
 					"max": 180,
-					"label": "Prüfung ein-aus",
+					"label": "Einstellung Check-schedule",
 					"sm": 2
 				},	
 				"div3":{
@@ -193,7 +201,7 @@
 					"type": "number",
 					"min": 1,
 					"max": 180,
-					"label": "Prüfung ein-aus",
+					"label": "Einstellung Check-schedule",
 					"sm": 2
 				},
 				"div4":{
@@ -235,14 +243,15 @@
 					"min": 1,
 					"max": 180,
 					"label": "Verzögerung",
+					"help":"",
 					"sm": 2
 				},
 				"grp5_cron": {
-					"type": "slider",
-					"min": 5,
-					"max": 30,
+					"type": "number",
+					"min": 1,
+					"max": 120,
 					"step":1,
-					"label": "Prüfung ein-aus",
+					"label": "Einstellung Check-schedule",
 					"sm": 2
 				}
 				
@@ -257,7 +266,8 @@
 				"items": {
 					"grp1_obj1":{
 						"type":"objectId",
-						"label":"Gerät 1"
+						"label":"Gerät 1",
+						"sm":12
 					},
 					"div1":{
 						"type":"divider",
@@ -265,35 +275,43 @@
 					},
 					"grp1_obj2":{
 						"type":"objectId",
-						"label":"Gerät 2"
+						"label":"Gerät 2",
+						"sm":12
 					},
 					"div2":{
 						"type":"divider",
-						"height":1	
+						"height":1,
+						"sm":12	
 					},
 					"grp1_obj3":{
 						"type":"objectId",
-						"label":"Gerät 3"
+						"label":"Gerät 3",
+						"sm":12
 					},
 					"div3":{
 						"type":"divider",
-						"height":1	
+						"height":1,
+						"sm":12
 					},
 					"grp1_obj4":{
 						"type":"objectId",
-						"label":"Gerät 4"
+						"label":"Gerät 4",
+						"sm":12
 					},
 					"div4":{
 						"type":"divider",
-						"height":1	
+						"height":1,
+						"sm":12	
 					},
 					"grp1_obj5":{
 						"type":"objectId",
-						"label":"Gerät 5"
+						"label":"Gerät 5",
+						"sm":12
 					},
 					"div5":{
 						"type":"divider",
-						"height":1	
+						"height":1,
+						"sm":12	
 					},
 
 					
@@ -302,20 +320,25 @@
 						"label":"Wie viele Geräte sollen einbezogen werden"
 					
 					},
-					"options.myType": { 
-						"newLine": true, 
-						"type": "select",
-						"label": "Type",
-						"sm": 2, 
-						"options": [
-							{"label": "kein Greät", "value": 0},
-							{"label": "1 Gerät", "value": 1},
-							{"label": "2 Geräte", "value": 2},
-							{"label": "3 Geräte", "value": 3},
-							{"label": "4 Geräte", "value": 4},
-							{"label": "5 Geräte", "value": 5}
-					] 
-				}
+					"options_grp1_anzahl": { 
+						"newLine":true,
+						"type": "number",
+						"min": 1,
+						"max": 5,
+						"label": "Anzahl der verwendeten Geräte",
+						"help":"Anzahl der verwendeten Geräte",
+						"sm": 2
+					},
+					"options_grp2_anzahl": { 
+						"newLine":false,
+						"type": "number",
+						"min": 1,
+						"max": 5,
+						"label": "Anzahl der verwendeten Geräte",
+						"help":"Anzahl der verwendeten Geräte",
+						"sm": 2
+					}
+
 
 					
 				}
