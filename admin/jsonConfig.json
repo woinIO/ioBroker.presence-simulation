@@ -13,7 +13,7 @@
 				"type": "text",
 				"label": "Beginn",
 				"newLine": true,
-				"text":"17:00:00"
+				"pattern":"##:##:##"
 			},
 			"grp1_ende": {
 				"type": "text",
@@ -239,9 +239,10 @@
 				"sm": 2
 			},
 			"grp5_cron": {
-				"type": "number",
-				"min": 1,
-				"max": 180,
+				"type": "slider",
+				"min": 5,
+				"max": 30,
+				"step":1,
 				"label": "Prüfung ein/aus",
 				"sm": 2
 			}
@@ -281,7 +282,7 @@
 				},
 				"grp1_obj4":{
 					"type":"objectId",
-					"label":"Gerät 2"
+					"label":"Gerät 4"
 				},
 				"div4":{
 					"type":"divider",
@@ -289,12 +290,33 @@
 				},
 				"grp1_obj5":{
 					"type":"objectId",
-					"label":"Gerät 3"
+					"label":"Gerät 5"
 				},
 				"div5":{
 					"type":"divider",
 					"height":1	
-				}
+				},
+
+				
+				"grp1_anzahl_gerate":{
+					"type":"staticText",
+					"label":"Wie viele Geräte sollen einbezogen werden"
+				
+				},
+				"options.myType": { 
+					"newLine": true, 
+					"type": "select",
+					"label": "Type",
+					"sm": 2, // 1 - 12
+					"options": [
+						{"label": "kein Greät", "value": 0},
+						{"label": "1 Gerät", "value": 1},
+						{"label": "2 Geräte", "value": 2},
+						{"label": "3 Geräte", "value": 3},
+						{"label": "4 Geräte", "value": 4},
+						{"label": "5 Geräte", "value": 5}
+				] 
+			}
 
 				
             }
