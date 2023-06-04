@@ -61,9 +61,21 @@ class PresenceSimulation extends utils.Adapter {
 			},
 			native: {},
 		});
+		await this.setObjectNotExistsAsync("anwesenheitserkennung_aktiv", {
+			type: "state",
+			common: {
+				name: "anwesenheitserkennung_aktiv",
+				type: "boolean",
+				role: "state",
+				read: true,
+				write: true,
+			},
+			native: {},
+		});
 
 		// In order to get state updates, you need to subscribe to them. The following line adds a subscription for our variable we have created above.
 		this.subscribeStates("testVariable");
+		this.subscribeStates("anwesenheitserkennung_aktiv");
 		// You can also add a subscription for multiple states. The following line watches all states starting with "lights."
 		// this.subscribeStates("lights.*");
 		// Or, if you really must, you can also watch all states. Don't do this if you don't need to. Otherwise this will cause a lot of unnecessary load on the system:
@@ -75,13 +87,15 @@ class PresenceSimulation extends utils.Adapter {
 		*/
 		// the variable testVariable is set to true as command (ack=false)
 		await this.setStateAsync("testVariable", true);
-
+		//await this.setStateAsync("anwesenheitserkennung_aktiv", false);
 		// same thing, but the value is flagged "ack"
 		// ack should be always set to true if the value is received from or acknowledged from the target system
 		await this.setStateAsync("testVariable", { val: true, ack: true });
+		await this.setStateAsync("anwesenheitserkennung_aktiv", {val:false,ack: true});
+
 
 		// same thing, but the state is deleted after 30s (getState will return null afterwards)
-		await this.setStateAsync("testVariable", { val: true, ack: true, expire: 30 });
+		//await this.setStateAsync("testVariable", { val: true, ack: true, expire: 30 });
 
 		// examples for the checkPassword/checkGroup functions
 		let result = await this.checkPasswordAsync("admin", "iobroker");
