@@ -320,7 +320,7 @@
 						"label":"Wie viele Geräte sollen einbezogen werden"
 					
 					},
-					"options_grp1_anzahl": { 
+					"grp1_anzahl": { 
 						"newLine":true,
 						"type": "number",
 						"min": 1,
@@ -329,7 +329,7 @@
 						"help":"Anzahl der verwendeten Geräte",
 						"sm": 2
 					},
-					"options_grp2_anzahl": { 
+					"grp2_anzahl": { 
 						"newLine":false,
 						"type": "number",
 						"min": 1,
