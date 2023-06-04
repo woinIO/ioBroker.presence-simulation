@@ -41,6 +41,9 @@ class PresenceSimulation extends utils.Adapter {
 		// this.config:
 		this.log.info("config option1: " + this.config.option1);
 		this.log.info("config option2: " + this.config.option2);
+		this.log.info("test :" + this.config.option1);
+		this.log.error("Die Gruppe 1 beginnt um" + this.config.grp1_start);
+		this.log.error("Die Gruppe 1 geht bis" + this.config.grp1_ende);
 
 		/*
 		For every state in the system there has to be also an object of type state
